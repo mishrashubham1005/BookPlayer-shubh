@@ -78,7 +78,8 @@ SiriKit **media** (`INPlayMediaIntent`) is still SiriKit, handled in the app (se
 RevenueCat (`purchases-ios`, ~5.78), Sentry (`sentry-cocoa`, **exact 8.36.0**), Kingfisher (~8.10),
 JellyfinAPI (`jellyfin-sdk-swift`, ~1.0), Get (~2.2), MarqueeLabel (~4.0.5), DeviceKit (~5.1),
 IDZSwiftCommonCrypto (~0.13.1), Themeable (~3.0), ZipArchive (~2.3), DirectoryWatcher (~2.8.6),
-BrowserDrop (`TortugaPower/SwiftBrowserDrop`, ~2.0; the Transfer from Computer server).
+BrowserDrop (`TortugaPower/SwiftBrowserDrop`, ~2.0; the Transfer from Computer server),
+WhisperKit (`argmaxinc/WhisperKit`, ~1.1.1; app target only, Page Match's on-device transcription).
 `BlurHashDecode.swift` is vendored (SwiftLint-excluded). RevenueCat + Kingfisher link into the **frameworks**;
 most others link into the **app**. JellyfinAPI and Get link into the app, both frameworks and `BookPlayerTests`, so
 Xcode builds each as one dynamic `…_PackageProduct.framework` that the app embeds: one copy of their types (an
@@ -500,6 +501,14 @@ The four skip-interval statics are `nonisolated`.
   `CommandParser`'s play-the-last-book. A spoken title or author plays the most
   recently played of up to 50 matches, a part of a bound book counting as the bound book (as in the Search tab), even
   over an exact title match (decided: "Play Dune" while in "Dune Messiah" plays Messiah).
+- **Page Match** (`BookPlayer/Player/PageMatch/`, app target only: Vision and WhisperKit don't link into the
+  watch): scan a page of the printed book, play from that spot. Opened from the player's More menu
+  (`PlayerSheetStyle.pageMatch`). Once per book, `BookTranscriber` transcribes the LOCAL audio files (streamed or
+  not-downloaded books are unavailable) with word timestamps in book time, saved as `<uuid>.json` in Application
+  Support/PageMatch (never Documents: the library imports whatever lands there; excluded from backup). A scan is
+  Vision OCR (`PageScanner`) then `PageMatcher`: 4-word phrase voting for the rough spot, then a fuzzy alignment
+  for per-line times; `PageMatch.isReliable` gates the jump. Playback moves through `jumpTo(_:recordBookmark: true)`,
+  so a wrong match is one tap to undo. Transcription runs in the foreground (idle timer off) for now.
 - Related services (protocols marked `/// sourcery: AutoMockable`): `SpeedService` (per-book vs global speed),
   `ShakeMotionService`, `PlayerLoaderService`, `WidgetReloadService`. `PlayerManagerProtocol` is AutoMockable but
   its mock does **not** reproduce `ObservableObject`/`@Published` — Combine-dependent tests need the concrete class.

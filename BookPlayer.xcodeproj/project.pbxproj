@@ -1052,6 +1052,14 @@
 		CEE4C04FC00CC74E8A566078 /* LibraryLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FACFAD706E57D2BF915994 /* LibraryLayout.swift */; };
 		FCC36DCA4DDFC47494F08E06 /* FoldedTileColumnsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1D595D4ED5DCE9C4CF1B8B /* FoldedTileColumnsTests.swift */; };
 		6B6FF31D9EA606728B7744A4 /* TransferViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16DCA3135D8033FF7B22131 /* TransferViewModelTests.swift */; };
+		0648160FFB3DCF12252D9CFE /* BookTranscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AA86FAFE310E506668E641 /* BookTranscript.swift */; };
+		1F18417B6C4AE527DCFB83B7 /* PageMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD0F4CC50AD43F90B3D6DE6 /* PageMatcher.swift */; };
+		CE938516E104704419C07561 /* PageScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDF5CD345A4023377D5A4D /* PageScanner.swift */; };
+		B1F353E1BE51456237908E23 /* BookTranscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A845E5849A64878D9ABB80AD /* BookTranscriber.swift */; };
+		D98B48FB641B9C49C6D78BCA /* PageMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A898829C754BA4B1EB7AD /* PageMatchViewModel.swift */; };
+		C2C4669DEC21B069A3F97B9B /* PageMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AFAB2AE8EDA8EF943297C1 /* PageMatchView.swift */; };
+		5191A1CFA4725DE82FBDE8A6 /* PageMatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49968225FCE64D34273AF8D3 /* PageMatcherTests.swift */; };
+		7D26485D560A901F8AAF91E1 /* WhisperKit in Frameworks */ = {isa = PBXBuildFile; productRef = CF4F229D159B42A222411711 /* WhisperKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2121,6 +2129,13 @@
 		99FACFAD706E57D2BF915994 /* LibraryLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryLayout.swift; sourceTree = "<group>"; };
 		3E1D595D4ED5DCE9C4CF1B8B /* FoldedTileColumnsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldedTileColumnsTests.swift; sourceTree = "<group>"; };
 		C16DCA3135D8033FF7B22131 /* TransferViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewModelTests.swift; sourceTree = "<group>"; };
+		46AA86FAFE310E506668E641 /* BookTranscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTranscript.swift; sourceTree = "<group>"; };
+		CDD0F4CC50AD43F90B3D6DE6 /* PageMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageMatcher.swift; sourceTree = "<group>"; };
+		EEFDF5CD345A4023377D5A4D /* PageScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageScanner.swift; sourceTree = "<group>"; };
+		A845E5849A64878D9ABB80AD /* BookTranscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTranscriber.swift; sourceTree = "<group>"; };
+		827A898829C754BA4B1EB7AD /* PageMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageMatchViewModel.swift; sourceTree = "<group>"; };
+		C1AFAB2AE8EDA8EF943297C1 /* PageMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageMatchView.swift; sourceTree = "<group>"; };
+		49968225FCE64D34273AF8D3 /* PageMatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageMatcherTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2159,6 +2174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D26485D560A901F8AAF91E1 /* WhisperKit in Frameworks */,
 				41F1A204254B09C00043FCF3 /* Themeable in Frameworks */,
 				63AE44732E6161B60088668F /* DirectoryWatcher in Frameworks */,
 				AF63FF5DBE1D839809595975 /* BrowserDrop in Frameworks */,
@@ -2615,6 +2631,7 @@
 		418B6D111D2707F800F974FB /* BookPlayerTests */ = {
 			isa = PBXGroup;
 			children = (
+				49968225FCE64D34273AF8D3 /* PageMatcherTests.swift */,
 				63833DF62AAC127900496246 /* Unit Tests.xctestplan */,
 				63833DF72AAC12AB00496246 /* Performance Tests.xctestplan */,
 				62AAE22827492D6E001EB9FF /* Mocks */,
@@ -4168,6 +4185,7 @@
 		C3EC372A206EDB9A0094B4E8 /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				72DD58FBE11677CCF110F086 /* PageMatch */,
 				9BD87531B9ABC0C9D654C2BF /* PhonePlayerPlatform.swift */,
 				99329DCE2F3BFD5F003F8E73 /* Models */,
 				99329DC82F3BF464003F8E73 /* ViewModels */,
@@ -4247,6 +4265,19 @@
 				F6F0D505E060FDAEB6DB68E3 /* IntegrationLibraryListView.swift */,
 			);
 			path = ListLayout;
+			sourceTree = "<group>";
+		};
+		72DD58FBE11677CCF110F086 /* PageMatch */ = {
+			isa = PBXGroup;
+			children = (
+				46AA86FAFE310E506668E641 /* BookTranscript.swift */,
+				CDD0F4CC50AD43F90B3D6DE6 /* PageMatcher.swift */,
+				EEFDF5CD345A4023377D5A4D /* PageScanner.swift */,
+				A845E5849A64878D9ABB80AD /* BookTranscriber.swift */,
+				827A898829C754BA4B1EB7AD /* PageMatchViewModel.swift */,
+				C1AFAB2AE8EDA8EF943297C1 /* PageMatchView.swift */,
+			);
+			path = PageMatch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -4378,6 +4409,7 @@
 			);
 			name = BookPlayer;
 			packageProductDependencies = (
+				CF4F229D159B42A222411711 /* WhisperKit */,
 				41F1A1D6254B07E80043FCF3 /* MarqueeLabel */,
 				41F1A1DF254B08A10043FCF3 /* DeviceKit */,
 				41F1A1F1254B09020043FCF3 /* IDZSwiftCommonCrypto */,
@@ -4570,6 +4602,7 @@
 			);
 			mainGroup = 418B6CEF1D2707F700F974FB;
 			packageReferences = (
+				F82A9DAD44249F2C0470D1C8 /* XCRemoteSwiftPackageReference "WhisperKit" */,
 				41F1A1D5254B07E80043FCF3 /* XCRemoteSwiftPackageReference "MarqueeLabel" */,
 				41F1A1DE254B08A10043FCF3 /* XCRemoteSwiftPackageReference "DeviceKit" */,
 				41F1A1F0254B09020043FCF3 /* XCRemoteSwiftPackageReference "IDZSwiftCommonCrypto" */,
@@ -5077,6 +5110,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0648160FFB3DCF12252D9CFE /* BookTranscript.swift in Sources */,
+				1F18417B6C4AE527DCFB83B7 /* PageMatcher.swift in Sources */,
+				CE938516E104704419C07561 /* PageScanner.swift in Sources */,
+				B1F353E1BE51456237908E23 /* BookTranscriber.swift in Sources */,
+				D98B48FB641B9C49C6D78BCA /* PageMatchViewModel.swift in Sources */,
+				C2C4669DEC21B069A3F97B9B /* PageMatchView.swift in Sources */,
 				CA535FC77B8C94C1DD84A663 /* PhonePlayerPlatform.swift in Sources */,
 				C451596D6866C856F3E5F7D1 /* IntegrationConnectionView.swift in Sources */,
 				C86098383F7FC099EED24AF7 /* IntegrationQuickConnectViews.swift in Sources */,
@@ -5449,6 +5488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5191A1CFA4725DE82FBDE8A6 /* PageMatcherTests.swift in Sources */,
 				84605C3CE34C41365FBD49FE /* PlayerControlsViewModelTests.swift in Sources */,
 				9C5E6F67C0E67ABAE3A1D498 /* PhoneWatchConnectivityServiceTests.swift in Sources */,
 				E09F01272E54DE3E5DDA39BD /* SleepTimerIntentTests.swift in Sources */,
@@ -7332,6 +7372,14 @@
 				minimumVersion = 5.78.0;
 			};
 		};
+		F82A9DAD44249F2C0470D1C8 /* XCRemoteSwiftPackageReference "WhisperKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/argmaxinc/WhisperKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -7439,6 +7487,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9FE8188D2805BCE40089A41E /* XCRemoteSwiftPackageReference "purchases-ios" */;
 			productName = RevenueCat;
+		};
+		CF4F229D159B42A222411711 /* WhisperKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F82A9DAD44249F2C0470D1C8 /* XCRemoteSwiftPackageReference "WhisperKit" */;
+			productName = WhisperKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 

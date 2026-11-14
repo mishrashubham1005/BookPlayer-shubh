@@ -14,6 +14,7 @@ enum PlayerSheetStyle: String, Identifiable {
     case chapters
     case controls
     case bookmark
+    case pageMatch
 
     var id: String { self.rawValue }
 }
@@ -692,6 +693,13 @@ final class PlayerViewModel: ObservableObject {
     
     actions.append(
       BPActionItem(
+        title: "page_match_title".localized,
+        handler: { [weak self] in self?.showPageMatch() }
+      )
+    )
+
+    actions.append(
+      BPActionItem(
         title: "button_free_title".localized,
         handler: { [weak self] in self?.showButtonFree() }
       )
@@ -714,6 +722,11 @@ final class PlayerViewModel: ObservableObject {
     )
   }
   
+  func showPageMatch() {
+    resetShowings()
+    displaySheet(style: .pageMatch)
+  }
+
   func showButtonFree() {
     showButtonFreeScreen = true
   }

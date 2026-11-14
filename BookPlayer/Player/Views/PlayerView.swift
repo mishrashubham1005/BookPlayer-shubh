@@ -105,6 +105,13 @@ struct PlayerView: View {
             }
           }
           .environmentObject(theme)
+        case .pageMatch:
+          PlayerListSheet { close in
+            PageMatchView(onPlay: close) {
+              PageMatchViewModel(playerManager: viewModel.playerManager)
+            }
+          }
+          .environmentObject(theme)
         }
       }
       .fullScreenCover(isPresented: $viewModel.showButtonFreeScreen) {
@@ -302,8 +309,8 @@ private struct PlayerContentView: View {
   }
 }
 
-/// A player list (chapters or bookmarks) as a sheet over the player: the list goes in a navigation
-/// stack with a close button, and picking a row closes the sheet
+/// A player list (chapters or bookmarks) or Page Match as a sheet over the player: the content goes
+/// in a navigation stack with a close button, and picking a row closes the sheet
 private struct PlayerListSheet<Content: View>: View {
   @EnvironmentObject private var theme: ThemeViewModel
   @Environment(\.dismiss) private var dismiss

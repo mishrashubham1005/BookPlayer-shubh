@@ -598,3 +598,28 @@
 "transfer_web_path_conflict" = "Another file or folder you sent has this name";
 "transfer_web_done_hint" = "When you’re done, confirm in BookPlayer to import the files.";
 "transfer_web_load_error" = "Can’t reach BookPlayer. Check that its Transfer screen is still open.";
+
+/* Page Match: scan a page of the printed book to jump to that spot in the audiobook */
+"page_match_title" = "Page Match";
+"page_match_intro_title" = "Jump from the page to the audio";
+"page_match_intro_description" = "Scan a page of your printed book or e-reader, and BookPlayer plays the audiobook from that spot.";
+"page_match_prepare_description" = "First, BookPlayer listens to this audiobook once to learn its words. It all happens on your iPhone. A long book can take a while, and the first time, it downloads a speech model (about 150 MB).";
+"page_match_prepare_button" = "Prepare This Book";
+"page_match_preparing" = "Preparing… %d%%";
+"page_match_keep_open" = "Keep this screen open until it’s done.";
+"page_match_ready_title" = "Find your place";
+"page_match_ready_description" = "Take a photo of the page you’re on. Get the whole page in, and avoid glare.";
+"page_match_scan_button" = "Scan Page";
+"page_match_photo_button" = "Choose Photo";
+"page_match_now_reading" = "Being read now";
+"page_match_matching" = "Finding your place…";
+"page_match_pick_line" = "Tap the line you’re on, or play from the top of the page";
+"page_match_play_button" = "Play from %@";
+"page_match_scan_again_button" = "Scan Again";
+"page_match_line_hint" = "Plays the audiobook from this line";
+"page_match_not_found_title" = "Couldn’t find this page";
+"page_match_not_found_description" = "Make sure the page is from this book, in focus, and fully in the photo.";
+"page_match_unavailable_title" = "Page Match needs the audio file";
+"page_match_unavailable_description" = "Download this book to your iPhone to use Page Match. Streamed books aren’t supported yet.";
+"page_match_failed_title" = "Couldn’t prepare this book";
+"page_match_retry_button" = "Try Again";
