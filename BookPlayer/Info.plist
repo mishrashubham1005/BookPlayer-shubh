@@ -408,6 +408,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Scan a page of your book to find the same spot in the audiobook</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Enable microphone access so you can record audio</string>
 	<key>NSSiriUsageDescription</key>
